@@ -1,16 +1,38 @@
-﻿var x = 0;
-var s = "";
+﻿//var x = 0;
+//var s = "";
 //alert("Hello Pluralsight");
 //console.log("Hello Purlasight");
-
+//-------------------------------------------------------------------------------
 //Hides the form
-var theForm = document.getElementById("theForm");
-theForm.hidden = true;
+// this is to hide it in JavaScript
+//var theForm = document.getElementById("theForm");
+//theForm.hidden = true;
 
-var button = document.getElementById("buyButton");
-button.addEventListener("click", function () {
+
+//Hides the form with JQuery
+var theForm = $("#theForm");
+theForm.hide();
+//--------------------------------------------------------------------------------
+//Button JavaScript
+//var button = document.getElementById("buyButton");
+//button.addEventListener("click", function () {
+//    console.log("Buying Item");
+//});
+
+//JQuery
+var button = $("#buyButton");
+button.on("click", function () {
     console.log("Buying Item");
 });
+//------------------------------------------------------------------------------
 
-var productInfo = document.getElementsByClassName("product-props");
-var listItems = productInfo.item[0].children;
+//JavaScript
+
+//var productInfo = document.getElementsByClassName("product-props");
+//var listItems = productInfo.item[0].children;
+
+//Jquery
+var productInfo = $(".product-props li");
+productInfo.on("click", function () {
+    console.log("You clicked on" + $(this).text());
+});

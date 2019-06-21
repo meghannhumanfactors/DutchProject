@@ -51,3 +51,19 @@ ul.product-props {
         max-width: 150px;
         border-radius: 50%;
     }
+
+
+
+
+
+menu li {
+    display: inline;
+}
+
+    menu li::after {
+        content: ' |';
+    }
+
+        menu li::after last-of-type::after {
+            content: "";
+        }

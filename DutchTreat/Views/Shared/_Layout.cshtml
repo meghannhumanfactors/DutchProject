@@ -3,16 +3,38 @@
 <head>
     <title>Dutch Treat: @ViewBag.Title </title>
     <link href="~/css/site.css" rel="stylesheet" />
-
     <!--https://github.com/psauthor/BuildingASPNETCore2/tree/master/Resources-->
 </head>
 <body>
-    <header>Welcome to Dutch Treat</header>
+    <header>
+        <h1>Welcome to Dutch Treat  </h1>
+        <menu>
+            <ul>
+                <li>
+                    <a asp-controller="App" asp-action="Home">Home</a>
+                </li>
+                <li>
+                    <a asp-controller="App" asp-action="Contact">Contact</a>
+                </li>
+                <li>
+                    <a asp-controller="App" asp-action="About">About</a>
+                </li>
+                @*  This is how the links look before we add in a asp-controller to link to our tag helper page which is a partial called  _ViewStart.cshtml
+                        <li><a href="/">Home</a>Home</li>
+                    <li><a href="/app/contact">Contact</a> Contact</li>
+                    <li><a href="/app/about">About</a>About</li>*@
+            </ul>
+        </menu>
+    </header>
     <section>
         <h2>@ViewBag.Title</h2>
         @RenderBody()
     </section>
     <footer>Copyright 2017 Dutch Treat LLC</footer>
-    <script src="js/index.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+    <!--<script src="~/lib/jquery/dist/jquery.min.js"></script>-->
+
+    <script src="~/js/index.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
 </body>
 </html>
