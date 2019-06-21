@@ -17,7 +17,10 @@ namespace DutchTreat
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseDefaultFiles();
+            //we stop using app.UseDefaultFiles so that we can use the mvc structure
+            // app.UseDefaultFiles();
+
+
             app.UseStaticFiles();
             app.UseNodeModules(env);
             //if (env.IsDevelopment())
@@ -30,6 +33,8 @@ namespace DutchTreat
             //    await context.Response.WriteAsync("Hello World!");
             //});
 
+
+            //This is setting up routes...your url
             app.UseMvc(cfg =>
             {
                 cfg.MapRoute("Default",

@@ -64,6 +64,6 @@ menu li {
         content: ' |';
     }
 
-        menu li::after last-of-type::after {
-            content: "";
-        }
+    menu li:last-of-type::after {
+        content: "";
+    }
