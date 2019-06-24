@@ -1,17 +1,43 @@
 ﻿@model ContactViewModel
-@{
-    ViewBag.Title = "Contact Us";
+@{ /**/
+                /**/
+                /**/
+                /**/
+                /**/
+                /**/
+                /**/
+                /**/
+                /**/
+                /**/
+                /**/
+                /**/
+                /**/
+                ViewBag.Title = "Contact Us";
 }
+@*
+        The section Scripts breaks my project...need to review
+        @section Scripts {
+        <script src="~/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="~/node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+    }*@
 <form action="post">
-    <label>Your Name:</label>
-    <input type="text" name="UserName" />
+    <div asp-validation-summary="ModelOnly"></div>
+    <label asp-for="UserName">Your Name:</label>
     <br />
-    <label>Email:</label>
-    <input type="email" name="UserEmail" />
+    <input asp-for="UserName" />
+    <span asp-validation-for="UserName"></span>
     <br />
-    <label> Subject:</label>
-    <input type="text" name="Subject" />
-    <label> Message:</label>
-    <textarea rows="4" name="UserMessage"></textarea>
+    <label asp-for="UserEmail">Email:</label>
+    <input asp-for="UserEmail" />
+    <span asp-validation-for="UserEmail"></span>
+    <br />
+    <label asp-for="Subject"> Subject:</label>
+    <input type="text" asp-for="Subject" />
+    <span asp-validation-for="Subject"></span>
+    <br />
+    <label asp-for="UserMessage"> Message:</label>
+    <textarea rows="4" asp-for="UserMessage"></textarea>
     <input type="submit" value="Send Message" />
+    <br />
+    <span asp-validation-for="UserMessage"></span>
 </form>

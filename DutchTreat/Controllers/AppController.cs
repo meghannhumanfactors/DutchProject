@@ -9,9 +9,19 @@ namespace DutchTreat.Controllers
             return View();
         }
 
-        [HttpPost("contact")]
+        // this breaks my project.... [HttpPost("contact")]
         public IActionResult Contact()
         {
+            if (ModelState.IsValid)
+            {
+                //Send the email
+            }
+            else
+            {
+                //Show the errors
+            }
+
+
             ViewBag.Title = "Contact Us";
 
             return View();
