@@ -12,18 +12,23 @@
                 /**/
                 /**/
                 /**/
+                /**/
+                /**/
+                /**/
+                /**/
+                /**/
+                /**/
+                /**/
                 ViewBag.Title = "Contact Us";
 }
-@*
-        The section Scripts breaks my project...need to review
-        @section Scripts {
-        <script src="~/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
-        <script src="~/node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
-    }*@
+@section Scripts {
+    <script src="~/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+}
 <form action="post">
     <div asp-validation-summary="ModelOnly"></div>
-    <label asp-for="UserName">Your Name:</label>
     <br />
+    <label asp-for="UserName">Your Name:</label>
     <input asp-for="UserName" />
     <span asp-validation-for="UserName"></span>
     <br />
@@ -38,6 +43,6 @@
     <label asp-for="UserMessage"> Message:</label>
     <textarea rows="4" asp-for="UserMessage"></textarea>
     <input type="submit" value="Send Message" />
-    <br />
     <span asp-validation-for="UserMessage"></span>
+    <br />
 </form>
