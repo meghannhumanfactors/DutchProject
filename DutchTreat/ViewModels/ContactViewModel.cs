@@ -9,11 +9,11 @@ namespace DutchTreat.ViewModels
         public string UserName { get; set; }
 
         [Required]
-        [EmailAddress(ErrorMessage = "Pleae add a valid email address.")]
+        [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
         public string UserEmail { get; set; }
 
-        [Required]
-        [MaxLength(50, ErrorMessage = "Please add a subject to your message.")]
+
+        [MaxLength(75, ErrorMessage = "Your subject is to long please reduce it.")]
         public string Subject { get; set; }
 
         [Required]
