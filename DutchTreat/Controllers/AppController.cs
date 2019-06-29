@@ -1,38 +1,65 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DutchTreat.Services;
+using DutchTreat.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using System;
+
+
 
 namespace DutchTreat.Controllers
 {
     public class AppController : Controller
+         private readonly IMailService _mailService;
+
+    public AppController(IMailService mailService)
     {
-        public IActionResult Index()
+        _mailService = mailService;
+    }
+
+
+
+    public IActionResult Index()
+    {
+        return View();
+    }
+    public IActionResult Contact()
+    {
+        return View();
+    }
+
+    [HttpPost("contact")]
+    public IActionResult Contact(ContactViewModel model)
+    {
+        if (ModelState.IsValid)
         {
-            return View();
+            //Send the email
+            _mailService.SendMail("shawn@wildermuth.com", model.Subject, $"From: {model.UserName} - {model.UserEmail}, Message: {model.UserMessage}");
+            ViewBag.UserMessage = "Mail Sent";
+            ModelState.Clear();
         }
+        //else
+        //{
+        //    //Show the errors
+        //}
 
-        // this breaks my project.... [HttpPost("contact")]
-        public IActionResult Contact()
+
+        ViewBag.Title = "Contact Us";
+
+        return View();
+    }
+
+    internal class _mailService
+    {
+        internal static void SendMail(string v1, string subject, string v2)
         {
-            if (ModelState.IsValid)
-            {
-                //Send the email
-                //_mailService.SendMail("shawn@wildermuth.com", model.Subject, $"From: {model.Name} - {model.Email}, Message: {model.Message}");
-            }
-            else
-            {
-                //Show the errors
-            }
-
-
-            ViewBag.Title = "Contact Us";
-
-            return View();
-        }
-
-        public IActionResult About()
-        {
-            ViewBag.Title = "About Us";
-
-            return View();
+            throw new NotImplementedException();
         }
     }
+
+    public IActionResult About()
+    {
+        ViewBag.Title = "About Us";
+
+        return View();
+    }
+}
 }
