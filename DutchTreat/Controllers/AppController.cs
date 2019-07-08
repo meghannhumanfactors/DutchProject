@@ -38,10 +38,10 @@ namespace DutchTreat.Controllers
                 ViewBag.UserMessage = "Mail Sent";
                 ModelState.Clear();
             }
-            //else
-            //{
-            //    //Show the errors
-            //}
+            else
+            {
+                //    //Show the errors
+            }
 
 
             ViewBag.Title = "Contact Us";
