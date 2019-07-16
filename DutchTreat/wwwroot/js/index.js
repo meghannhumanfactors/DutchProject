@@ -10,14 +10,16 @@
 
 
 //Hides the form with JQuery
-var theForm = $("#theForm");
-theForm.hide();
+//var theForm = $("#theForm");
+//theForm.hide();
 //--------------------------------------------------------------------------------
 //Button JavaScript
 //var button = document.getElementById("buyButton");
 //button.addEventListener("click", function () {
 //    console.log("Buying Item");
 //});
+
+var theForm = $("#theForm");
 
 //JQuery
 var button = $("#buyButton");
@@ -34,5 +36,14 @@ button.on("click", function () {
 //Jquery
 var productInfo = $(".product-props li");
 productInfo.on("click", function () {
-    console.log("You clicked on" + $(this).text());
+    console.log("You clicked on one of the items: " + $(this).text());
+});
+
+var $loginToggle = $("#loginToggle");
+var $popupForm = $(".popup-form");
+
+$loginToggle.on("click", function () {
+    $popupForm.toggle(1000);
+});
+
 });

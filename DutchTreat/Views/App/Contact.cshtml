@@ -11,23 +11,28 @@
     <div class="card card-body bg-light">
         <form action="post">
             <div asp-validation-summary="ModelOnly"></div>
+            <div class="Instructions">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">* Indicates a required field</li>
+                </ul>
+            </div>
             <div class="form-group">
-                <label asp-for="UserName">*Your Name:</label>
+                <label asp-for="UserName">* Your Name:</label>
                 <input type="text" asp-for="UserName" class="form-control" />
                 <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="UserEmail" *>*Email:</label>
+                <label asp-for="UserEmail">* Email:</label>
                 <input type="email" asp-for="UserEmail" class="form-control" />
                 <span asp-validation-for="UserEmail" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Subject"> Subject:</label>
+                <label asp-for="Subject">   Subject:</label>
                 <input type="text" asp-for="Subject" class="form-control" />
                 <span asp-validation-for="Subject" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="UserMessage"> *Message:</label>
+                <label asp-for="UserMessage"> * Message:</label>
                 <textarea rows="4" asp-for="UserMessage" class="form-control"></textarea>
                 <span asp-validation-for="UserMessage" class="text-danger"></span>
             </div>
