@@ -30,6 +30,8 @@ namespace DutchTreat.Controllers
 
         [HttpPost("contact")]
         public IActionResult Contact(ContactViewModel model)
+
+
         {
             if (ModelState.IsValid)
             {
@@ -38,10 +40,7 @@ namespace DutchTreat.Controllers
                 ViewBag.UserMessage = "Mail Sent";
                 ModelState.Clear();
             }
-            else
-            {
-                //    //Show the errors
-            }
+
 
 
             ViewBag.Title = "Contact Us";

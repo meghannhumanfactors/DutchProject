@@ -45,5 +45,3 @@ var $popupForm = $(".popup-form");
 $loginToggle.on("click", function () {
     $popupForm.toggle(1000);
 });
-
-});
